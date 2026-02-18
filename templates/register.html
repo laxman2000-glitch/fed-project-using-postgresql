@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <div class = "container">
+    <h1>Registration</h1>
+<form action = "{% url 'register_user' %}" method="post" class="col-md-9 m-auto" role="form">
+    {% csrf_token %}
+    <div class = "row">
+        <div> class = "form-group col-md-6 m-3"> 
+            <label for="inputname">name</label>
+            <input type = "text" class="form-control mt-1" id="name" name="name" placeholder="Name">
+        </div>
+        <div>  class = "form-group col-md-6 m-3">
+            <label for="inputfather">father</label>
+            <input type ="text" class="form-control mt-1" id="father" name="father" placeholder="fathername">
+        </div>
+        <div>  class = "form-group col-md-6 m-3>
+            <label for="inputnumber">number</label>
+            <input type ="text" class="form-control mt-1" id="number" name="number" placeholder="number">
+        </div>
+        <div>  class = "form-group col-md-6 m-3>
+            <label for="inputpincode">pincode</label>
+            <input type ="text" class="form-control mt-1" id="pincode" name="pincode" placeholder="pincode">
+        </div>
+    </div>
+    {% if message %}
+           <div class="alert alert-info">{{ message }}</div>
+    {% endif %}
+        <button type="submit" class="btn btn-primary mt-3">Register</button>
+       </form>
+    </div>
+</body>
+</html>
